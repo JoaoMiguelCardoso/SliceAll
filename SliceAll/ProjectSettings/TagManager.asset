@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Limite
   - Fruta
+  - Faca
+  - Muda
   layers:
   - Default
   - TransparentFX

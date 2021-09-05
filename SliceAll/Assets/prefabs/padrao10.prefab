@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 840010382593744643}
   - component: {fileID: 840010382593744642}
+  - component: {fileID: 1787629176640373238}
   m_Layer: 0
   m_Name: padrao10
   m_TagString: Untagged
@@ -55,6 +56,19 @@ MonoBehaviour:
   setRodaTempo1: 2
   setRodaTempo2: 3
   setRodaTempo3: 4
+--- !u!114 &1787629176640373238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840010382593744652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96874ac64240a945aead4e130bf96b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Quantidade: 8
 --- !u!1 &840010383002388170
 GameObject:
   m_ObjectHideFlags: 0

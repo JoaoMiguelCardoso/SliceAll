@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class cortaFruta : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.tag.Equals("Faca")){
+            GetComponentInParent<Contafruta>().frutacortada();
+            Destroy(this.gameObject);
+        }
     }
 }
