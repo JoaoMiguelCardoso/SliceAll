@@ -533,7 +533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1254948852
 Transform:
   m_ObjectHideFlags: 0
@@ -571,6 +571,7 @@ MonoBehaviour:
   - {fileID: 1495552086741960164, guid: 32b0f46245f65f5498cd1605103da51b, type: 3}
   - {fileID: 3150198670233338790, guid: 89b10388841695147ad75c3ad0033207, type: 3}
   - {fileID: 840010382593744652, guid: 76c82b86c1ffdbd48ad9fec50009fdc1, type: 3}
+  SetRespawn: 0.5
 --- !u!1 &1278057071
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc19567e1b14f72489c84b7afe9d6c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _indo: 0
   velo: 1200
   FrutasCortas: 0
 --- !u!1 &1798039867

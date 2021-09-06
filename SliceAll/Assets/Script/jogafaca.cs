@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class jogafaca : MonoBehaviour
 {
-    private bool _indo;
+    public bool _indo;
     [SerializeField] private float velo;
     public float FrutasCortas;
     
