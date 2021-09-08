@@ -14,13 +14,14 @@ public class MudaPadrao : MonoBehaviour
     {
         _length = _padroes.Length;
         faca = GameObject.FindGameObjectWithTag("Faca");
-        padraosemnd();
     }
     private void Update(){
         if(_sem && faca.GetComponent<jogafaca>()._indo == false){
             if(respawn < Time.time){
                 _random= Random.Range(0, _length);
-                Instantiate(_padroes[_random], transform.position, Quaternion.identity);
+                if(GameObject.FindGameObjectWithTag("padrao") == null){
+                    Instantiate(_padroes[_random], transform.position, Quaternion.identity);
+                }
                 _sem = false;
             }
         }else{
@@ -29,5 +30,9 @@ public class MudaPadrao : MonoBehaviour
     }
     public void padraosemnd(){
         _sem = true;
+    }
+    public void play(){
+        _sem = true;
+        respawn = SetRespawn + Time.time;
     }
 }

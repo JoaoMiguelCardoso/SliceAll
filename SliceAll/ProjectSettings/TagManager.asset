@@ -8,6 +8,8 @@ TagManager:
   - Fruta
   - Faca
   - Muda
+  - padrao
+  - botaoPricipal
   layers:
   - Default
   - TransparentFX

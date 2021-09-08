@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 2918321141322010756}
   m_Layer: 0
   m_Name: padrao3
-  m_TagString: Untagged
+  m_TagString: padrao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
