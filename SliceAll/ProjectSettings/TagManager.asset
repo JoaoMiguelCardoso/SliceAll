@@ -10,6 +10,8 @@ TagManager:
   - Muda
   - padrao
   - botaoPricipal
+  - PupDevagar
+  - MudaVelo
   layers:
   - Default
   - TransparentFX
