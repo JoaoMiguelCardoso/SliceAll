@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class jogafaca : MonoBehaviour
 {
     public bool _indo;
     private bool _inicio = true;
     [SerializeField] private float velo;
-    [SerializeField] private GameObject telainicio, telaover;
+    [SerializeField] private GameObject telainicio, telaover, combo;
+    [SerializeField] private Text Pontos;
     public float FrutasCortas;
+    private int FrutasEmSequencia;
+    private int Pontuacao;
+    private int PontuacaooDafruta;
+    private float facadas;
+    private bool Combando;
     private GameObject _muda, _botao;
 
     public void Start(){
@@ -16,6 +22,10 @@ public class jogafaca : MonoBehaviour
         _botao = GameObject.FindGameObjectWithTag("botaoPrincipal");
         telainicio.SetActive(true);
         telaover.SetActive(false);
+    }
+    private void Update(){
+        Pontos.text = ""+ Pontuacao;
+        combo.transform.localScale = new Vector3(facadas, 1f, 1f) ;
     }
     public void Click(){
         if(_inicio == false){
@@ -38,6 +48,12 @@ public class jogafaca : MonoBehaviour
                 transform.position= new Vector3(0f, -3.5f, 0f);
                 _indo = false;
                 FrutasCortas = 0;
+                FrutasEmSequencia = 0;
+                facadas = facadas + 0.1f;
+                if(facadas == 1){
+                    Combando = true;
+                    facadas = 0;
+                }
             }else{
                 telaover.SetActive(true);
                 _botao.SetActive(false);
@@ -46,10 +62,14 @@ public class jogafaca : MonoBehaviour
                 _inicio = true;
                 _indo = false;
                 Debug.Log("errou");
+                FrutasEmSequencia = 0;
             }
         }
         if(other.tag.Equals("Fruta")){
+            FrutasEmSequencia ++;
             FrutasCortas +=1;
+            PontuacaooDafruta = 1 * FrutasEmSequencia;
+            Pontuacao = Pontuacao + PontuacaooDafruta;
         }
     }
 }
