@@ -5,7 +5,7 @@ using UnityEngine;
 public class cortaFruta : MonoBehaviour
 {
     public AudioSource[] CortaFrutaSom;
-    bool t =false;
+    public bool t =false;
     float r;
     private void Update(){
         if(t == true){
