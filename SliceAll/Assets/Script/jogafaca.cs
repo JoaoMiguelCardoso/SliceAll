@@ -52,9 +52,10 @@ public class jogafaca : MonoBehaviour
                 FrutasCortas = 0;
                 FrutasEmSequencia = 0;
                 facadas = facadas + 0.1f;
-                if(facadas == 1){
+                if(facadas >= 1){
                     Combando = true;
-                    evento.GetComponent<ComboAtivo>().AtivaEvento(Random.Range(20, 40));
+                    int y = Random.Range(20, 40);
+                    evento.GetComponent<ComboAtivo>().AtivaEvento(y);
                     facadas = 0;
                 }
             }else{

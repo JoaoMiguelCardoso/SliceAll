@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891db7758a539834faf12673a98aff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audios: []
+  CortaFrutaSom: {fileID: 0}
 --- !u!1 &7084051367484342752
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891db7758a539834faf12673a98aff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audios: []
+  CortaFrutaSom: {fileID: 0}
 --- !u!1 &7084051367539131962
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891db7758a539834faf12673a98aff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audios: []
+  CortaFrutaSom: {fileID: 0}
 --- !u!1 &7084051367872838017
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891db7758a539834faf12673a98aff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audios: []
+  CortaFrutaSom: {fileID: 0}
 --- !u!1 &7084051368253058288
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891db7758a539834faf12673a98aff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audios: []
+  CortaFrutaSom: {fileID: 0}
 --- !u!1 &7084051368488454803
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +820,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891db7758a539834faf12673a98aff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audios: []
+  CortaFrutaSom: {fileID: 0}
 --- !u!1 &7084051368799418417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1028,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891db7758a539834faf12673a98aff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audios: []
+  CortaFrutaSom: {fileID: 0}
 --- !u!1 &7084051369141174676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891db7758a539834faf12673a98aff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audios: []
+  CortaFrutaSom: {fileID: 0}
 --- !u!1 &7084051369162547982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,3 +1302,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891db7758a539834faf12673a98aff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audios: []
+  CortaFrutaSom: {fileID: 0}
