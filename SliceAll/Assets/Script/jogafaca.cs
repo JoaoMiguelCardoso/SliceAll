@@ -70,10 +70,12 @@ public class jogafaca : MonoBehaviour
             }
         }
         if(other.tag.Equals("Fruta")){
-            FrutasEmSequencia ++;
-            FrutasCortas +=1;
-            PontuacaooDafruta = 1 * FrutasEmSequencia;
-            Pontuacao = Pontuacao + PontuacaooDafruta;
+            if(other.GetComponent<cortaFruta>().t == false){
+                FrutasEmSequencia ++;
+                FrutasCortas +=1;
+                PontuacaooDafruta = 1 * FrutasEmSequencia;
+                Pontuacao = Pontuacao + PontuacaooDafruta;
+            }
         }
     }
 }
