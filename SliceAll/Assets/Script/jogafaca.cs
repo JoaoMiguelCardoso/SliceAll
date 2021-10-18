@@ -16,6 +16,7 @@ public class jogafaca : MonoBehaviour
     private float facadas;
     private bool Combando;
     private GameObject _muda, _botao;
+    public AudioSource JogouFacaSom;
 
     public void Start(){
         _muda = GameObject.FindGameObjectWithTag("Muda");
@@ -32,6 +33,7 @@ public class jogafaca : MonoBehaviour
             if(_indo == false){
                 GetComponent<Rigidbody2D>().AddForce(Vector2.up * velo, ForceMode2D.Force);
                 _indo = true;
+                JogouFacaSom.Play();
             }
         }else{
             _muda.GetComponent<MudaPadrao>().play();
