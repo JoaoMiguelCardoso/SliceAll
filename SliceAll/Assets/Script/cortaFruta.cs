@@ -13,6 +13,7 @@ public class cortaFruta : MonoBehaviour
             }
             int o = Random.Range(0, audios.Length);
             CortaFrutaSom.clip = audios[o];
+            CortaFrutaSom.enabled = true;
             CortaFrutaSom.Play();
             Destroy(this.gameObject);
         }
