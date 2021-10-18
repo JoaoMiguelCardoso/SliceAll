@@ -7,7 +7,7 @@ public class jogafaca : MonoBehaviour
     public bool _indo;
     private bool _inicio = true;
     [SerializeField] private float velo;
-    [SerializeField] private GameObject telainicio, telaover, combo;
+    [SerializeField] private GameObject telainicio, telaover, combo, evento;
     [SerializeField] private Text Pontos;
     public float FrutasCortas;
     private int FrutasEmSequencia;
@@ -54,6 +54,7 @@ public class jogafaca : MonoBehaviour
                 facadas = facadas + 0.1f;
                 if(facadas == 1){
                     Combando = true;
+                    evento.GetComponent<ComboAtivo>().AtivaEvento(Random.Range(20, 40));
                     facadas = 0;
                 }
             }else{
