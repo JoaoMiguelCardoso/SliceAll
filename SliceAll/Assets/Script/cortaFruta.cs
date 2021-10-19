@@ -16,6 +16,7 @@ public class cortaFruta : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other){
         if(other.tag.Equals("Faca")){
+            Debug.Log("ue");
             if(GetComponentInParent<Contafruta>() != null){
                 GetComponentInParent<Contafruta>().frutacortada();
             }
@@ -23,7 +24,6 @@ public class cortaFruta : MonoBehaviour
             CortaFrutaSom[o].Play();
             GetComponent<SpriteRenderer>().enabled = false;
             r = Time.time + 1f;
-            t = true;
         }
     }
 }

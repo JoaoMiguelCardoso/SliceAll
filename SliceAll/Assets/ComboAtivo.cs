@@ -9,7 +9,8 @@ public class ComboAtivo : MonoBehaviour
     [SerializeField]private float SetTimer;
     private float Timer;
     int b, c;
-    bool f;
+    bool f, j;
+    public GameObject padrao;
     private void FixedUpdate(){
         if(f == true){
             if(Timer <= Time.time){
@@ -28,11 +29,22 @@ public class ComboAtivo : MonoBehaviour
         }   
         if(c >= b){
             f = false;
+            c = 0;
+            if(j == true){
+                Debug.Log(padrao);
+                if(padrao != null){
+                    if(Timer <= Time.time){
+                        padrao.SetActive(true);
+                        j = false;
+                    }
+                }
+            }
         }
     }
     public void AtivaEvento(int a){
         b = a;
         f = true;
+        j= true;
         Timer = Time.time + SetTimer;
     }
 }

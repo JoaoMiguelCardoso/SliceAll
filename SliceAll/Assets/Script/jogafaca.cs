@@ -20,7 +20,7 @@ public class jogafaca : MonoBehaviour
 
     public void Start(){
         _muda = GameObject.FindGameObjectWithTag("Muda");
-        _botao = GameObject.FindGameObjectWithTag("botaoPrincipal");
+        _botao = GameObject.FindGameObjectWithTag("botaoPricipal");
         telainicio.SetActive(true);
         telaover.SetActive(false);
     }
@@ -55,6 +55,8 @@ public class jogafaca : MonoBehaviour
                 if(facadas >= 1){
                     Combando = true;
                     int y = Random.Range(20, 40);
+                    evento.GetComponent<ComboAtivo>().padrao = GameObject.FindGameObjectWithTag("padrao");
+                    GameObject.FindGameObjectWithTag("padrao").SetActive(false);
                     evento.GetComponent<ComboAtivo>().AtivaEvento(y);
                     facadas = 0;
                 }
@@ -65,16 +67,17 @@ public class jogafaca : MonoBehaviour
                 transform.position= new Vector3(0f, -3.5f, 0f);
                 _inicio = true;
                 _indo = false;
-                Debug.Log("errou");
                 FrutasEmSequencia = 0;
             }
         }
         if(other.tag.Equals("Fruta")){
             if(other.GetComponent<cortaFruta>().t == false){
+                Debug.Log("ta loko?");
                 FrutasEmSequencia ++;
                 FrutasCortas +=1;
                 PontuacaooDafruta = 1 * FrutasEmSequencia;
                 Pontuacao = Pontuacao + PontuacaooDafruta;
+                other.GetComponent<cortaFruta>().t = true;
             }
         }
     }
