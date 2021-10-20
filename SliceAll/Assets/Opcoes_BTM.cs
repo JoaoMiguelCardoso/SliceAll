@@ -5,6 +5,7 @@ using UnityEngine;
 public class Opcoes_BTM : MonoBehaviour
 {
     [SerializeField]private GameObject opcoes, creditos, botoes, fundo;
+    bool ativo = true;
     public void AbreOpcoes(){
         Time.timeScale = 0f;
         opcoes.SetActive(true);
@@ -29,12 +30,18 @@ public class Opcoes_BTM : MonoBehaviour
     }
 
     public void BotaoSom(){
-
+        if(ativo){
+            DesativaSom();
+            ativo = false;
+        }else{
+            AtivaSom();
+            ativo = true;
+        }
     }
     private void AtivaSom(){
-
+        AudioListener.volume = 1;
     }
     private void DesativaSom(){
-
+        AudioListener.volume = 0;
     }
 }
