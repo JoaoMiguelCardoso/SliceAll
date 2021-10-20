@@ -18,6 +18,11 @@ public class jogafaca : MonoBehaviour
     private GameObject _muda, _botao;
     public AudioSource JogouFacaSom;
 
+    private int _2X;
+    [SerializeField]private float SetTime2X;
+    private float Time2x;
+
+    private int facas;
     public void Start(){
         _muda = GameObject.FindGameObjectWithTag("Muda");
         _botao = GameObject.FindGameObjectWithTag("botaoPricipal");
@@ -29,6 +34,9 @@ public class jogafaca : MonoBehaviour
     private void Update(){
         Pontos.text = ""+ Pontuacao;
         combo.transform.GetChild(2).transform.localScale = new Vector3(facadas, 1f, 1f) ;
+        if(Time2x <= Time.time){
+            _2X = 1;
+        }
     }
     public void Click(){
         if(_inicio == false){
@@ -64,8 +72,12 @@ public class jogafaca : MonoBehaviour
                     evento.GetComponent<ComboAtivo>().AtivaEvento(y);
                     facadas = 0;
                 }
-            }else{
-                GameOve();
+            }else{  
+                if(facas <= 0){
+                    GameOve();
+                }else{
+                    facas--;
+                }
             }
         }
         if(other.tag.Equals("Fruta")){
@@ -74,9 +86,19 @@ public class jogafaca : MonoBehaviour
                 FrutasEmSequencia ++;
                 FrutasCortas +=1;
                 PontuacaooDafruta = 1 * FrutasEmSequencia;
-                Pontuacao = Pontuacao + PontuacaooDafruta;
+                Pontuacao = Pontuacao + (PontuacaooDafruta* _2X);
                 other.GetComponent<cortaFruta>().t = true;
             }
+        }
+        if(other.tag.Equals("PUP_2X")){
+            Time2x = SetTime2X + Time.time;
+            _2X = 2;
+        }
+        if(other.tag.Equals("PUP_faca")){
+            facas ++;
+        }
+        if(other.tag.Equals("PUP_Devagar")){
+            GameObject.FindGameObjectWithTag("padrao").GetComponent<giraFrutas>().MultiVelo();
         }
     }
     public void GameOve(){

@@ -6,8 +6,11 @@ public class giraFrutas : MonoBehaviour
 {
     private Transform tr;
     [SerializeField]private Vector3 rodando;
+    [SerializeField]private float setTimerMulti;
+    private float TimerMulti;
+    private bool MultiAtivo;
     private float velo;
-    public float varivelo;
+    public float varivelo, Multiplaer;
     [SerializeField]private float setRodaTempo1, setRodaTempo2, setRodaTempo3;
     private float rodaTempo;
     void Start()
@@ -15,14 +18,26 @@ public class giraFrutas : MonoBehaviour
         tr = this.transform;
         rodando = new Vector3(0f, 0f, 0f);
         mudaRotacao();
+        Multiplaer = 1f;
     }
     void FixedUpdate()
     {
-        rodando.z = velo +varivelo;
+        rodando.z = (velo +varivelo)*Multiplaer;
         tr.Rotate(rodando, Space.World);
         if(rodaTempo <= Time.time){
             mudaRotacao();
         }
+        if(MultiAtivo){
+            if(TimerMulti<= Time.time){
+                Multiplaer = 1f;
+                MultiAtivo = false;
+            }
+        }
+    }
+    public void MultiVelo(){
+        MultiAtivo = true;
+        Multiplaer = 0.5f;
+        TimerMulti = Time.time + setTimerMulti;
     }
 
     private void mudaRotacao(){
