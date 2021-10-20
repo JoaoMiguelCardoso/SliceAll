@@ -50,7 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rodando: {x: 0, y: 0, z: 0}
+  setTimerMulti: 10
   varivelo: 0
+  Multiplaer: 0
   setRodaTempo1: 2
   setRodaTempo2: 3
   setRodaTempo3: 4
@@ -170,6 +172,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 349716629775875445}
   - {fileID: 1493393378802040098}
+  t: 0
 --- !u!50 &1255803062734763318
 Rigidbody2D:
   serializedVersion: 4
@@ -502,6 +505,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 8126810891450048316}
   - {fileID: 3482922730883376576}
+  t: 0
 --- !u!50 &138704735614976645
 Rigidbody2D:
   serializedVersion: 4
@@ -834,6 +838,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 5013634716492174120}
   - {fileID: 4127196813953634156}
+  t: 0
 --- !u!50 &812677846123137294
 Rigidbody2D:
   serializedVersion: 4
@@ -1166,6 +1171,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 3195342313608640535}
   - {fileID: 2328972431008753823}
+  t: 0
 --- !u!50 &2537939574300051528
 Rigidbody2D:
   serializedVersion: 4
@@ -1498,6 +1504,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 2820429987146374228}
   - {fileID: 4719086117413272967}
+  t: 0
 --- !u!50 &551320195889420344
 Rigidbody2D:
   serializedVersion: 4

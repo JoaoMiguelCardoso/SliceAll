@@ -12,6 +12,10 @@ TagManager:
   - botaoPricipal
   - PupDevagar
   - MudaVelo
+  - PUP_2X
+  - PUP_faca
+  - PUP_Devagar
+  - PUP_Grande
   layers:
   - Default
   - TransparentFX

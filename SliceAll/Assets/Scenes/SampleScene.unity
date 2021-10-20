@@ -153,6 +153,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fruta: {fileID: 6929455790044421579, guid: 920e98a6682c6314ea0c32f831d17f4a, type: 3}
+  PUP:
+  - {fileID: 2760170993353593110, guid: 4115f8bc2de82c04bbf0e68d6d864d2b, type: 3}
+  - {fileID: 1394945849656360400, guid: 098347db3d57f8c4f8a07c254f0b74b9, type: 3}
+  - {fileID: 7152295196990658925, guid: 3fe05b6cbd30d524ea6dec543b7540fe, type: 3}
+  - {fileID: 9202031595270785092, guid: 953786a0caa3764429aa960ac8fb0a3b, type: 3}
   pontos:
   - {fileID: 2118745952}
   - {fileID: 276528851}
@@ -1527,7 +1532,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rodando: {x: 0, y: 0, z: 0}
+  setTimerMulti: 0
   varivelo: 0
+  Multiplaer: 0
   setRodaTempo1: 0
   setRodaTempo2: 0
   setRodaTempo3: 0
@@ -1925,7 +1932,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 62.95395, y: -65}
+  m_AnchoredPosition: {x: 62.953857, y: -65}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &886280074
@@ -3006,6 +3013,8 @@ MonoBehaviour:
   Pontos: {fileID: 192717048}
   FrutasCortas: 0
   JogouFacaSom: {fileID: 1278057077}
+  SetTime2X: 0
+  SetTimeGrande: 0
 --- !u!82 &1278057077
 AudioSource:
   m_ObjectHideFlags: 0

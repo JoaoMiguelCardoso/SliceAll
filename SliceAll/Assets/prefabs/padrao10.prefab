@@ -53,7 +53,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rodando: {x: 0, y: 0, z: 0}
+  setTimerMulti: 10
   varivelo: 0
+  Multiplaer: 0
   setRodaTempo1: 2
   setRodaTempo2: 3
   setRodaTempo3: 4
@@ -210,6 +212,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 4836600007516726214}
   - {fileID: 8486140473315421531}
+  t: 0
 --- !u!82 &4836600007516726214
 AudioSource:
   m_ObjectHideFlags: 0
@@ -542,6 +545,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 6175541112054617999}
   - {fileID: 8579329532969657533}
+  t: 0
 --- !u!82 &6175541112054617999
 AudioSource:
   m_ObjectHideFlags: 0
@@ -874,6 +878,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 4084116275946297575}
   - {fileID: 8573517015958607697}
+  t: 0
 --- !u!82 &4084116275946297575
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1206,6 +1211,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 9098018025744787119}
   - {fileID: 7685433815801336867}
+  t: 0
 --- !u!82 &9098018025744787119
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1538,6 +1544,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 4428759148608313106}
   - {fileID: 4271883830504054738}
+  t: 0
 --- !u!82 &4428759148608313106
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1870,6 +1877,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 4360283576371442442}
   - {fileID: 1487671357150666701}
+  t: 0
 --- !u!82 &4360283576371442442
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2202,6 +2210,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 6017004101808537289}
   - {fileID: 3012025024021732357}
+  t: 0
 --- !u!82 &6017004101808537289
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2534,6 +2543,7 @@ MonoBehaviour:
   CortaFrutaSom:
   - {fileID: 5639412885137624130}
   - {fileID: 3879126103467466403}
+  t: 0
 --- !u!82 &5639412885137624130
 AudioSource:
   m_ObjectHideFlags: 0

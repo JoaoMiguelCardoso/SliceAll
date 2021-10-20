@@ -19,9 +19,8 @@ public class jogafaca : MonoBehaviour
     public AudioSource JogouFacaSom;
 
     private int _2X;
-    [SerializeField]private float SetTime2X;
-    private float Time2x;
-
+    [SerializeField]private float SetTime2X, SetTimeGrande;
+    private float Time2x, TimeGrande;
     private int facas;
     public void Start(){
         _muda = GameObject.FindGameObjectWithTag("Muda");
@@ -36,6 +35,9 @@ public class jogafaca : MonoBehaviour
         combo.transform.GetChild(2).transform.localScale = new Vector3(facadas, 1f, 1f) ;
         if(Time2x <= Time.time){
             _2X = 1;
+        }
+        if(TimeGrande <= Time.time){
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
     public void Click(){
@@ -93,12 +95,48 @@ public class jogafaca : MonoBehaviour
         if(other.tag.Equals("PUP_2X")){
             Time2x = SetTime2X + Time.time;
             _2X = 2;
+            if(other.GetComponent<cortaFruta>().t == false){
+                Debug.Log("ta loko?");
+                FrutasEmSequencia ++;
+                FrutasCortas +=1;
+                PontuacaooDafruta = 1 * FrutasEmSequencia;
+                Pontuacao = Pontuacao + (PontuacaooDafruta* _2X);
+                other.GetComponent<cortaFruta>().t = true;
+            }
         }
         if(other.tag.Equals("PUP_faca")){
             facas ++;
+            if(other.GetComponent<cortaFruta>().t == false){
+                Debug.Log("ta loko?");
+                FrutasEmSequencia ++;
+                FrutasCortas +=1;
+                PontuacaooDafruta = 1 * FrutasEmSequencia;
+                Pontuacao = Pontuacao + (PontuacaooDafruta* _2X);
+                other.GetComponent<cortaFruta>().t = true;
+            }
         }
         if(other.tag.Equals("PUP_Devagar")){
             GameObject.FindGameObjectWithTag("padrao").GetComponent<giraFrutas>().MultiVelo();
+            if(other.GetComponent<cortaFruta>().t == false){
+                Debug.Log("ta loko?");
+                FrutasEmSequencia ++;
+                FrutasCortas +=1;
+                PontuacaooDafruta = 1 * FrutasEmSequencia;
+                Pontuacao = Pontuacao + (PontuacaooDafruta* _2X);
+                other.GetComponent<cortaFruta>().t = true;
+            }
+        }
+        if(other.tag.Equals("PUP_Grande")){
+            transform.localScale = new Vector3(2f, 2f, 1f);
+            TimeGrande = SetTimeGrande + Time.time;
+            if(other.GetComponent<cortaFruta>().t == false){
+                Debug.Log("ta loko?");
+                FrutasEmSequencia ++;
+                FrutasCortas +=1;
+                PontuacaooDafruta = 1 * FrutasEmSequencia;
+                Pontuacao = Pontuacao + (PontuacaooDafruta* _2X);
+                other.GetComponent<cortaFruta>().t = true;
+            }
         }
     }
     public void GameOve(){
