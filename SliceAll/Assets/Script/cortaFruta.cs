@@ -10,6 +10,9 @@ public class cortaFruta : MonoBehaviour
     private void Update(){
         if(t == true){
             if(r<= Time.time){
+                if(GetComponentInParent<Contafruta>() != null){
+                    GetComponentInParent<Contafruta>().frutacortada();
+                }
                 Destroy(this.gameObject);
             }
         }
@@ -17,9 +20,6 @@ public class cortaFruta : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if(other.tag.Equals("Faca")){
             Debug.Log("ue");
-            if(GetComponentInParent<Contafruta>() != null){
-                GetComponentInParent<Contafruta>().frutacortada();
-            }
             int o = Random.Range(0, CortaFrutaSom.Length);
             CortaFrutaSom[o].Play();
             GetComponent<SpriteRenderer>().enabled = false;

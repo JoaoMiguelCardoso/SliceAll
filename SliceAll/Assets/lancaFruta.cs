@@ -21,4 +21,10 @@ public class lancaFruta : MonoBehaviour
             rb.AddForce(new Vector2(ForcaHorizantal, ForcaVertica));
         }
     }
+    
+    public void OnTriggerEnter2D(Collider2D other){
+        if(other.tag.Equals("Limite")){
+            Destroy(this.gameObject);
+        }
+    }
 }

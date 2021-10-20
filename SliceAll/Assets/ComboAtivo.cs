@@ -18,7 +18,7 @@ public class ComboAtivo : MonoBehaviour
                 if(lado == 0 ){
                     GameObject fru = Instantiate(Fruta, pontos[0].transform.position, Quaternion.identity);
                     c++;
-                    Timer = Time.time + SetTimer;
+                    Timer = Time.time + SetTimer;    
                 }else if(lado >0){
                     GameObject fru = Instantiate(Fruta, pontos[1].transform.position, Quaternion.identity);
                     fru.GetComponent<lancaFruta>().lado = true;
@@ -28,15 +28,15 @@ public class ComboAtivo : MonoBehaviour
             }
         }   
         if(c >= b){
-            f = false;
-            c = 0;
+            if(f == true){
+                Timer = Time.time + 1.25f;
+                f = false;
+            }
             if(j == true){
-                Debug.Log(padrao);
-                if(padrao != null){
-                    if(Timer <= Time.time){
-                        padrao.SetActive(true);
-                        j = false;
-                    }
+                if(Timer <= Time.time){
+                    padrao.SetActive(true);
+                    j = false;
+                    c = 0;
                 }
             }
         }
@@ -46,5 +46,10 @@ public class ComboAtivo : MonoBehaviour
         f = true;
         j= true;
         Timer = Time.time + SetTimer;
+    }
+    public void ParaEvento(){
+        f = false;
+        j= false;
+        Timer = Time.time + 100f;
     }
 }

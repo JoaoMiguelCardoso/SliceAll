@@ -7,7 +7,7 @@ public class jogafaca : MonoBehaviour
     public bool _indo;
     private bool _inicio = true;
     [SerializeField] private float velo;
-    [SerializeField] private GameObject telainicio, telaover, combo, evento;
+    [SerializeField] private GameObject telainicio, telaover, funto, opcoes, combo, evento;
     [SerializeField] private Text Pontos;
     public float FrutasCortas;
     private int FrutasEmSequencia;
@@ -22,11 +22,13 @@ public class jogafaca : MonoBehaviour
         _muda = GameObject.FindGameObjectWithTag("Muda");
         _botao = GameObject.FindGameObjectWithTag("botaoPricipal");
         telainicio.SetActive(true);
+        funto.SetActive(true);
         telaover.SetActive(false);
+        combo.SetActive(false);
     }
     private void Update(){
         Pontos.text = ""+ Pontuacao;
-        combo.transform.localScale = new Vector3(facadas, 1f, 1f) ;
+        combo.transform.GetChild(2).transform.localScale = new Vector3(facadas, 1f, 1f) ;
     }
     public void Click(){
         if(_inicio == false){
@@ -38,7 +40,9 @@ public class jogafaca : MonoBehaviour
         }else{
             _muda.GetComponent<MudaPadrao>().play();
             telaover.SetActive(false);
+            funto.SetActive(false);
             telainicio.SetActive(false);
+            combo.SetActive(true);
             _inicio = false;
         }
     }
@@ -61,13 +65,7 @@ public class jogafaca : MonoBehaviour
                     facadas = 0;
                 }
             }else{
-                telaover.SetActive(true);
-                _botao.SetActive(false);
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
-                transform.position= new Vector3(0f, -3.5f, 0f);
-                _inicio = true;
-                _indo = false;
-                FrutasEmSequencia = 0;
+                GameOve();
             }
         }
         if(other.tag.Equals("Fruta")){
@@ -80,5 +78,29 @@ public class jogafaca : MonoBehaviour
                 other.GetComponent<cortaFruta>().t = true;
             }
         }
+    }
+    public void GameOve(){
+        telaover.SetActive(true);
+        funto.SetActive(true);
+        _botao.SetActive(false);
+        combo.SetActive(false);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+        transform.position= new Vector3(0f, -3.5f, 0f);
+        _inicio = true;
+        _indo = false;
+        FrutasEmSequencia = 0;
+        _muda.SetActive(false);
+        evento.GetComponent<ComboAtivo>().ParaEvento();
+        Destroy( GameObject.FindGameObjectWithTag("padrao"));
+    }
+    public void Restart(){
+        Pontuacao = 0;
+        facadas = 0;
+        funto.SetActive(false);
+        _botao.SetActive(true);
+        telaover.SetActive(false);
+        combo.SetActive(true);
+        _muda.SetActive(true);
+        _muda.GetComponent<MudaPadrao>().play();
     }
 }
