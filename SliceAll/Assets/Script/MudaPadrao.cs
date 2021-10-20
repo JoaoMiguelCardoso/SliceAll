@@ -28,6 +28,7 @@ public class MudaPadrao : MonoBehaviour
             respawn = SetRespawn + Time.time;
         }
     }
+    
     public void padraosemnd(){
         _sem = true;
     }

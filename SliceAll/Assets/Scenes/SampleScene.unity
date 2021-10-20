@@ -687,6 +687,7 @@ GameObject:
   - component: {fileID: 218656706}
   - component: {fileID: 218656705}
   - component: {fileID: 218656704}
+  - component: {fileID: 218656708}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -783,6 +784,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &218656708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218656703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b78fd9badb6d4e49b142dbafc015304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opcoes: {fileID: 2129351994}
+  creditos: {fileID: 776024373}
+  botoes: {fileID: 892516671}
+  fundo: {fileID: 1933914040}
 --- !u!1 &225355846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,7 +1838,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 837075013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 218656708}
+        m_TargetAssemblyTypeName: Opcoes_BTM, Assembly-CSharp
+        m_MethodName: FechaOpcoes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &837075013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1942,7 +1971,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 886280075}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 218656708}
+        m_TargetAssemblyTypeName: Opcoes_BTM, Assembly-CSharp
+        m_MethodName: AbreOpcoes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &886280075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2629,7 +2670,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1151330958}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 218656708}
+        m_TargetAssemblyTypeName: Opcoes_BTM, Assembly-CSharp
+        m_MethodName: Creditos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1151330958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3265,7 +3318,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1408146863}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 218656708}
+        m_TargetAssemblyTypeName: Opcoes_BTM, Assembly-CSharp
+        m_MethodName: Volta
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1408146863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3452,7 +3517,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1722079132}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 218656708}
+        m_TargetAssemblyTypeName: Opcoes_BTM, Assembly-CSharp
+        m_MethodName: BotaoSom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1722079132
 MonoBehaviour:
   m_ObjectHideFlags: 0
