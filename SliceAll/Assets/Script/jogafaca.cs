@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class jogafaca : MonoBehaviour
 {
     public bool _indo;
@@ -9,9 +10,10 @@ public class jogafaca : MonoBehaviour
     [SerializeField] private float velo;
     [SerializeField] private GameObject telainicio, telaover, funto, opcoes, combo, evento;
     [SerializeField] private Text Pontos;
+    [SerializeField]private TMP_Text best, atual;
     public float FrutasCortas;
     private int FrutasEmSequencia;
-    private int Pontuacao;
+    private int Pontuacao, BestPontu;
     private int PontuacaooDafruta;
     private float facadas;
     private bool Combando;
@@ -29,6 +31,7 @@ public class jogafaca : MonoBehaviour
         funto.SetActive(true);
         telaover.SetActive(false);
         combo.SetActive(false);
+        BestPontu = PlayerPrefs.GetInt("Best");
     }
     private void Update(){
         Pontos.text = ""+ Pontuacao;
@@ -141,6 +144,15 @@ public class jogafaca : MonoBehaviour
     }
     public void GameOve(){
         telaover.SetActive(true);
+        atual.text = "SCORE: "+ Pontuacao;
+        if(Pontuacao >= BestPontu){
+            BestPontu = Pontuacao;
+            best.text = "BEST: "+ BestPontu;
+            PlayerPrefs.SetInt("Best", BestPontu);
+        }else{
+            best.text = "BEST: "+ BestPontu;;
+        }
+
         funto.SetActive(true);
         _botao.SetActive(false);
         combo.SetActive(false);
