@@ -8,7 +8,7 @@ public class jogafaca : MonoBehaviour
     public bool _indo;
     private bool _inicio = true;
     [SerializeField] private float velo;
-    [SerializeField] private GameObject telainicio, telaover, funto, opcoes, combo, evento, particula, Text2X;
+    [SerializeField] private GameObject telainicio, telaover, funto, opcoes, combo, evento, particula, Text2X, TXT_Pontu, TXT_facas;
     [SerializeField] private Text Pontos;
     [SerializeField]private TMP_Text best, atual, facasTXT;
     public float FrutasCortas;
@@ -16,7 +16,6 @@ public class jogafaca : MonoBehaviour
     private int Pontuacao, BestPontu;
     private int PontuacaooDafruta;
     private float facadas;
-    private bool Combando;
     private GameObject _muda, _botao;
     public AudioSource JogouFacaSom;
     private GameObject temp;
@@ -34,6 +33,8 @@ public class jogafaca : MonoBehaviour
         combo.SetActive(false);
         BestPontu = PlayerPrefs.GetInt("Best");
         Text2X.SetActive(false);
+        TXT_facas.SetActive(false);
+        TXT_Pontu.SetActive(false);
     }
     private void Update(){
         Pontos.text = ""+ Pontuacao;
@@ -53,6 +54,8 @@ public class jogafaca : MonoBehaviour
                 GetComponent<Rigidbody2D>().AddForce(Vector2.up * velo, ForceMode2D.Force);
                 _indo = true;
                 JogouFacaSom.Play();
+                TXT_facas.SetActive(true);
+                TXT_Pontu.SetActive(true);
             }
         }else{
             _muda.GetComponent<MudaPadrao>().play();
@@ -71,16 +74,16 @@ public class jogafaca : MonoBehaviour
                 transform.position= new Vector3(0f, -3.5f, 0f);
                 _indo = false;
                 FrutasCortas = 0;
-                FrutasEmSequencia = 0;
-                facadas = facadas + 0.1f;
+                FrutasEmSequencia = 0;  
                 if(facadas >= 1){
-                    Combando = true;
                     int y = Random.Range(20, 40);
                     evento.GetComponent<ComboAtivo>().padrao = GameObject.FindGameObjectWithTag("padrao");
                     temp = GameObject.FindGameObjectWithTag("padrao");
                     GameObject.FindGameObjectWithTag("padrao").SetActive(false);
                     evento.GetComponent<ComboAtivo>().AtivaEvento(y);
                     facadas = 0;
+                }else{
+                    facadas = facadas + 0.1f;
                 }
             }else{  
                 if(facas <= 0){
@@ -180,6 +183,8 @@ public class jogafaca : MonoBehaviour
         _muda.SetActive(false);
         evento.GetComponent<ComboAtivo>().ParaEvento();
         Destroy( GameObject.FindGameObjectWithTag("padrao"));
+        TXT_facas.SetActive(false);
+        TXT_Pontu.SetActive(false);
     }
     private void Parti(Transform v){
         GameObject p = Instantiate(particula, v.position, Quaternion.identity);
@@ -194,5 +199,7 @@ public class jogafaca : MonoBehaviour
         combo.SetActive(true);
         _muda.SetActive(true);
         _muda.GetComponent<MudaPadrao>().play();
+        TXT_facas.SetActive(true);
+        TXT_Pontu.SetActive(true);
     }
 }

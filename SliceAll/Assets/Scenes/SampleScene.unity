@@ -1722,7 +1722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3016,6 +3016,8 @@ MonoBehaviour:
   evento: {fileID: 25200191}
   particula: {fileID: 8804485708011139680, guid: 626887d172a0be345b0d231010e63e2b, type: 3}
   Text2X: {fileID: 887058096}
+  TXT_Pontu: {fileID: 192717046}
+  TXT_facas: {fileID: 1574665724}
   Pontos: {fileID: 192717048}
   best: {fileID: 1363749523}
   atual: {fileID: 892789775}
