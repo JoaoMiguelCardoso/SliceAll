@@ -8,7 +8,7 @@ public class jogafaca : MonoBehaviour
     public bool _indo;
     private bool _inicio = true;
     [SerializeField] private float velo;
-    [SerializeField] private GameObject telainicio, telaover, funto, opcoes, combo, evento;
+    [SerializeField] private GameObject telainicio, telaover, funto, opcoes, combo, evento, particula;
     [SerializeField] private Text Pontos;
     [SerializeField]private TMP_Text best, atual;
     public float FrutasCortas;
@@ -93,6 +93,7 @@ public class jogafaca : MonoBehaviour
                 PontuacaooDafruta = 1 * FrutasEmSequencia;
                 Pontuacao = Pontuacao + (PontuacaooDafruta* _2X);
                 other.GetComponent<cortaFruta>().t = true;
+                Parti(other.transform);
             }
         }
         if(other.tag.Equals("PUP_2X")){
@@ -105,6 +106,7 @@ public class jogafaca : MonoBehaviour
                 PontuacaooDafruta = 1 * FrutasEmSequencia;
                 Pontuacao = Pontuacao + (PontuacaooDafruta* _2X);
                 other.GetComponent<cortaFruta>().t = true;
+                Parti(other.transform);
             }
         }
         if(other.tag.Equals("PUP_faca")){
@@ -116,6 +118,7 @@ public class jogafaca : MonoBehaviour
                 PontuacaooDafruta = 1 * FrutasEmSequencia;
                 Pontuacao = Pontuacao + (PontuacaooDafruta* _2X);
                 other.GetComponent<cortaFruta>().t = true;
+                Parti(other.transform);
             }
         }
         if(other.tag.Equals("PUP_Devagar")){
@@ -127,6 +130,7 @@ public class jogafaca : MonoBehaviour
                 PontuacaooDafruta = 1 * FrutasEmSequencia;
                 Pontuacao = Pontuacao + (PontuacaooDafruta* _2X);
                 other.GetComponent<cortaFruta>().t = true;
+                Parti(other.transform);
             }
         }
         if(other.tag.Equals("PUP_Grande")){
@@ -139,6 +143,7 @@ public class jogafaca : MonoBehaviour
                 PontuacaooDafruta = 1 * FrutasEmSequencia;
                 Pontuacao = Pontuacao + (PontuacaooDafruta* _2X);
                 other.GetComponent<cortaFruta>().t = true;
+                Parti(other.transform);
             }
         }
     }
@@ -164,6 +169,10 @@ public class jogafaca : MonoBehaviour
         _muda.SetActive(false);
         evento.GetComponent<ComboAtivo>().ParaEvento();
         Destroy( GameObject.FindGameObjectWithTag("padrao"));
+    }
+    private void Parti(Transform v){
+        GameObject p = Instantiate(particula, v.position, Quaternion.identity);
+        Destroy(p, 2f);
     }
     public void Restart(){
         Pontuacao = 0;
