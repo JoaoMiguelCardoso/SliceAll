@@ -8,9 +8,9 @@ public class jogafaca : MonoBehaviour
     public bool _indo;
     private bool _inicio = true;
     [SerializeField] private float velo;
-    [SerializeField] private GameObject telainicio, telaover, funto, opcoes, combo, evento, particula;
+    [SerializeField] private GameObject telainicio, telaover, funto, opcoes, combo, evento, particula, Text2X;
     [SerializeField] private Text Pontos;
-    [SerializeField]private TMP_Text best, atual;
+    [SerializeField]private TMP_Text best, atual, facasTXT;
     public float FrutasCortas;
     private int FrutasEmSequencia;
     private int Pontuacao, BestPontu;
@@ -19,6 +19,7 @@ public class jogafaca : MonoBehaviour
     private bool Combando;
     private GameObject _muda, _botao;
     public AudioSource JogouFacaSom;
+    private GameObject temp;
 
     private int _2X;
     [SerializeField]private float SetTime2X, SetTimeGrande;
@@ -32,12 +33,15 @@ public class jogafaca : MonoBehaviour
         telaover.SetActive(false);
         combo.SetActive(false);
         BestPontu = PlayerPrefs.GetInt("Best");
+        Text2X.SetActive(false);
     }
     private void Update(){
         Pontos.text = ""+ Pontuacao;
+        facasTXT.text = "X"+facas;
         combo.transform.GetChild(2).transform.localScale = new Vector3(facadas, 1f, 1f) ;
         if(Time2x <= Time.time){
             _2X = 1;
+            Text2X.SetActive(false);
         }
         if(TimeGrande <= Time.time){
             transform.localScale = new Vector3(1f, 1f, 1f);
@@ -73,6 +77,7 @@ public class jogafaca : MonoBehaviour
                     Combando = true;
                     int y = Random.Range(20, 40);
                     evento.GetComponent<ComboAtivo>().padrao = GameObject.FindGameObjectWithTag("padrao");
+                    temp = GameObject.FindGameObjectWithTag("padrao");
                     GameObject.FindGameObjectWithTag("padrao").SetActive(false);
                     evento.GetComponent<ComboAtivo>().AtivaEvento(y);
                     facadas = 0;
@@ -82,6 +87,11 @@ public class jogafaca : MonoBehaviour
                     GameOve();
                 }else{
                     facas--;
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+                    transform.position= new Vector3(0f, -3.5f, 0f);
+                    _inicio = true;
+                    _indo = false;
+                    FrutasEmSequencia = 0;
                 }
             }
         }
@@ -99,6 +109,7 @@ public class jogafaca : MonoBehaviour
         if(other.tag.Equals("PUP_2X")){
             Time2x = SetTime2X + Time.time;
             _2X = 2;
+            Text2X.SetActive(true);
             if(other.GetComponent<cortaFruta>().t == false){
                 Debug.Log("ta loko?");
                 FrutasEmSequencia ++;
@@ -122,7 +133,7 @@ public class jogafaca : MonoBehaviour
             }
         }
         if(other.tag.Equals("PUP_Devagar")){
-            GameObject.FindGameObjectWithTag("padrao").GetComponent<giraFrutas>().MultiVelo();
+            temp.GetComponent<giraFrutas>().MultiVelo();
             if(other.GetComponent<cortaFruta>().t == false){
                 Debug.Log("ta loko?");
                 FrutasEmSequencia ++;
@@ -134,7 +145,7 @@ public class jogafaca : MonoBehaviour
             }
         }
         if(other.tag.Equals("PUP_Grande")){
-            transform.localScale = new Vector3(2f, 2f, 1f);
+            transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             TimeGrande = SetTimeGrande + Time.time;
             if(other.GetComponent<cortaFruta>().t == false){
                 Debug.Log("ta loko?");
@@ -157,7 +168,7 @@ public class jogafaca : MonoBehaviour
         }else{
             best.text = "BEST: "+ BestPontu;;
         }
-
+        Time2x = 0;
         funto.SetActive(true);
         _botao.SetActive(false);
         combo.SetActive(false);
